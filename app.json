@@ -1,0 +1,93 @@
+{
+  "expo": {
+    "name": "W",
+    "slug": "w",
+    "scheme": "w",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "newArchEnabled": true,
+    "userInterfaceStyle": "automatic",
+    "backgroundColor": "#050515",
+    "assetBundlePatterns": [
+      "assets/*"
+    ],
+    "experiments": {
+      "typedRoutes": true
+    },
+    "platforms": [
+      "ios",
+      "android"
+    ],
+    "ios": {
+      "infoPlist": {
+        "UIBackgroundModes": [
+          "location"
+        ],
+        "NSLocationWhenInUseUsageDescription": "Your app needs access to location when in use for...",
+        "NSLocationAlwaysUsageDescription": "Your app needs access to location even when the app is in the background for...",
+        "NSLocationAlwaysAndWhenInUseUsageDescription": "Your app needs access to location even when the app is in the background for..."
+      },
+      "supportsTablet": false,
+      "bundleIdentifier": "com.lielamar.w",
+      "icon": {
+        "light": "./assets/branding/icons/logo.png"
+      }
+    },
+    "android": {
+      "edgeToEdgeEnabled": true,
+      "package": "com.lielamar.w",
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/branding/icons/logo.png",
+        "monochromeImage": "./assets/branding/icons/logo.png",
+        "backgroundColor": "#246BFD"
+      }
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-splash-screen",
+        {
+          "imageWidth": 200,
+          "resizeMode": "contain",
+          "image": "./assets/branding/splash/splash-icon-light.png",
+          "backgroundColor": "#050515",
+          "dark": {
+            "image": "./assets/branding/splash/splash-icon-light.png",
+            "backgroundColor": "#050515"
+          }
+        }
+      ],
+      [
+        "expo-contacts",
+        {
+          "contactsPermission": "Allow $(PRODUCT_NAME) to access your contacts."
+        }
+      ],
+      [
+        "expo-calendar",
+        {
+          "calendarPermission": "The app needs to access your calendar."
+        }
+      ],
+      [
+        "expo-location",
+        {
+          "locationAlwaysPermission": "Allow $(PRODUCT_NAME) to use your location.",
+          "locationAlwaysAndWhenInUsePermission": "Allow $(PRODUCT_NAME) to use your location.",
+          "locationWhenInUsePermission": "Allow $(PRODUCT_NAME) to access your location while using the app."
+        }
+      ],
+      [
+        "react-native-health",
+        {
+          "isClinicalDataEnabled": true,
+          "healthSharePermission": "Custom health share permission",
+          "healthUpdatePermission": "Custom health update permission",
+          "healthClinicalDescription": "Custom health share permission for clinical data"
+        }
+      ],
+      "expo-secure-store",
+      "react-native-health"
+    ]
+  }
+}
