@@ -100,6 +100,22 @@ const ProfileTabPage = () => {
                       {
                         text: "Delete",
                         style: "destructive",
+                        onPress: async () => {
+                          const host = await SecureStore.getItemAsync("host");
+
+                          if (!host) {
+                            Alert.alert("Error", "Host not set. Please set the host first.");
+                            return;
+                          }
+
+                          try {
+                            await axios.delete(`${host}/api/personal`);
+                            Alert.alert("Success", "Your data has been deleted successfully.");
+                          } catch (error) {
+                            console.error("Failed to delete data:", error);
+                            Alert.alert("Error", "Failed to delete your data. Please try again later.");
+                          }
+                        }
                       }
                     ]
                   );
